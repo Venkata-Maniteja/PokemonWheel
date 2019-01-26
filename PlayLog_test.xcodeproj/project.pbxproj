@@ -10,11 +10,12 @@
 		373ACB2621FB33AA00373C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ACB2521FB33AA00373C5D /* AppDelegate.swift */; };
 		373ACB2821FB33AA00373C5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ACB2721FB33AA00373C5D /* ViewController.swift */; };
 		373ACB2B21FB33AA00373C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373ACB2921FB33AA00373C5D /* Main.storyboard */; };
-		373ACB2E21FB33AA00373C5D /* PlayLog_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 373ACB2C21FB33AA00373C5D /* PlayLog_test.xcdatamodeld */; };
 		373ACB3021FB33AC00373C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373ACB2F21FB33AC00373C5D /* Assets.xcassets */; };
 		373ACB3321FB33AC00373C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373ACB3121FB33AC00373C5D /* LaunchScreen.storyboard */; };
 		373ACB3E21FB33AC00373C5D /* PlayLog_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ACB3D21FB33AC00373C5D /* PlayLog_testTests.swift */; };
 		373ACB4921FB33AC00373C5D /* PlayLog_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ACB4821FB33AC00373C5D /* PlayLog_testUITests.swift */; };
+		373ACB5721FB35A800373C5D /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ACB5621FB35A800373C5D /* WheelView.swift */; };
+		373ACB5B21FBF93100373C5D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373ACB5A21FBF93100373C5D /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		373ACB2521FB33AA00373C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		373ACB2721FB33AA00373C5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		373ACB2A21FB33AA00373C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		373ACB2D21FB33AA00373C5D /* PlayLog_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlayLog_test.xcdatamodel; sourceTree = "<group>"; };
 		373ACB2F21FB33AC00373C5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		373ACB3221FB33AC00373C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		373ACB3421FB33AC00373C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		373ACB4421FB33AC00373C5D /* PlayLog_testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayLog_testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		373ACB4821FB33AC00373C5D /* PlayLog_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLog_testUITests.swift; sourceTree = "<group>"; };
 		373ACB4A21FB33AC00373C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		373ACB5621FB35A800373C5D /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
+		373ACB5A21FBF93100373C5D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373ACB5B21FBF93100373C5D /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,7 @@
 				373ACB3C21FB33AC00373C5D /* PlayLog_testTests */,
 				373ACB4721FB33AC00373C5D /* PlayLog_testUITests */,
 				373ACB2321FB33AA00373C5D /* Products */,
+				373ACB5921FBF93100373C5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,7 +109,7 @@
 				373ACB2F21FB33AC00373C5D /* Assets.xcassets */,
 				373ACB3121FB33AC00373C5D /* LaunchScreen.storyboard */,
 				373ACB3421FB33AC00373C5D /* Info.plist */,
-				373ACB2C21FB33AA00373C5D /* PlayLog_test.xcdatamodeld */,
+				373ACB5821FB35B200373C5D /* View */,
 			);
 			path = PlayLog_test;
 			sourceTree = "<group>";
@@ -126,6 +130,22 @@
 				373ACB4A21FB33AC00373C5D /* Info.plist */,
 			);
 			path = PlayLog_testUITests;
+			sourceTree = "<group>";
+		};
+		373ACB5821FB35B200373C5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				373ACB5621FB35A800373C5D /* WheelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		373ACB5921FBF93100373C5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				373ACB5A21FBF93100373C5D /* Photos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				373ACB2E21FB33AA00373C5D /* PlayLog_test.xcdatamodeld in Sources */,
+				373ACB5721FB35A800373C5D /* WheelView.swift in Sources */,
 				373ACB2821FB33AA00373C5D /* ViewController.swift in Sources */,
 				373ACB2621FB33AA00373C5D /* AppDelegate.swift in Sources */,
 			);
@@ -590,19 +610,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		373ACB2C21FB33AA00373C5D /* PlayLog_test.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				373ACB2D21FB33AA00373C5D /* PlayLog_test.xcdatamodel */,
-			);
-			currentVersion = 373ACB2D21FB33AA00373C5D /* PlayLog_test.xcdatamodel */;
-			path = PlayLog_test.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 373ACB1A21FB33AA00373C5D /* Project object */;
 }
