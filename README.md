@@ -2,4 +2,4 @@
 
 Sample output:
 
-![Output sample](https://github.com/Venkata-Maniteja/FancyCar/blob/master/FancyCar/Resources/Fancy_infinite_scroll.gif)
+![Output sample](https://github.com/Venkata-Maniteja/PokemonWheel/blob/master/PlayLog_test/Resources/Wheel_1.gif)
