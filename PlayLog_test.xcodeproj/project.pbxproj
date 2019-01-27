@@ -16,6 +16,7 @@
 		373ACB4921FB33AC00373C5D /* PlayLog_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ACB4821FB33AC00373C5D /* PlayLog_testUITests.swift */; };
 		373ACB5721FB35A800373C5D /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ACB5621FB35A800373C5D /* WheelView.swift */; };
 		373ACB5B21FBF93100373C5D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373ACB5A21FBF93100373C5D /* Photos.framework */; };
+		373ACB5E21FC0F4800373C5D /* Wheel_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 373ACB5D21FC0F4800373C5D /* Wheel_1.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		373ACB4A21FB33AC00373C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		373ACB5621FB35A800373C5D /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		373ACB5A21FBF93100373C5D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		373ACB5D21FC0F4800373C5D /* Wheel_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Wheel_1.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		373ACB2421FB33AA00373C5D /* PlayLog_test */ = {
 			isa = PBXGroup;
 			children = (
+				373ACB5C21FC0F0300373C5D /* Resources */,
 				373ACB2521FB33AA00373C5D /* AppDelegate.swift */,
 				373ACB2721FB33AA00373C5D /* ViewController.swift */,
 				373ACB2921FB33AA00373C5D /* Main.storyboard */,
@@ -146,6 +149,14 @@
 				373ACB5A21FBF93100373C5D /* Photos.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		373ACB5C21FC0F0300373C5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				373ACB5D21FC0F4800373C5D /* Wheel_1.gif */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373ACB5E21FC0F4800373C5D /* Wheel_1.gif in Resources */,
 				373ACB3321FB33AC00373C5D /* LaunchScreen.storyboard in Resources */,
 				373ACB3021FB33AC00373C5D /* Assets.xcassets in Resources */,
 				373ACB2B21FB33AA00373C5D /* Main.storyboard in Resources */,

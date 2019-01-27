@@ -11,15 +11,14 @@ import Photos
 
 class ViewController: UIViewController, CAAnimationDelegate {
     
-    var ballXconstraint: NSLayoutConstraint?
-    var ballYconstraint: NSLayoutConstraint?
+    var pokeballX: NSLayoutConstraint?
+    var pokeballY: NSLayoutConstraint?
     var ballRadius = 20
     var trackRadius = 100
     let trackOffset = 10
     var lastPoint : CGPoint?
     
     var degrees = 0{
-        
         didSet{
             degreeLabel.text = "\(oldValue)"
         }
@@ -35,8 +34,8 @@ class ViewController: UIViewController, CAAnimationDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        createTrack()
-        createBall()
+        prepareCircle()
+        createPokeBall()
         let touch = UIPanGestureRecognizer(target: self, action:#selector(dragBall(recognizer:)))
         trackHolder.addGestureRecognizer(touch)
         requestPhotos()
@@ -44,7 +43,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
     }
     
   
-    private func createTrack() {
+    private func prepareCircle() {
         track = WheelView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         trackHolder.addSubview(track)
         track.backgroundColor = UIColor.white
@@ -56,7 +55,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
         track.heightAnchor.constraint(equalToConstant: CGFloat(2 * trackRadius)).isActive = true
     }
     
-    private func createBall() {
+    private func createPokeBall() {
         
         ball = UIButton()
         ball.setBackgroundImage(UIImage(named: "pokeball"), for: .normal)
@@ -71,11 +70,11 @@ class ViewController: UIViewController, CAAnimationDelegate {
         
         // X/Y constraints:
         let offset = pointOnCircumference(0.0)
-        ballXconstraint = ball.centerXAnchor.constraint(equalTo: track.centerXAnchor, constant: offset.x)
-        ballYconstraint = ball.centerYAnchor.constraint(equalTo: track.centerYAnchor, constant: offset.y)
+        pokeballX = ball.centerXAnchor.constraint(equalTo: track.centerXAnchor, constant: offset.x)
+        pokeballY = ball.centerYAnchor.constraint(equalTo: track.centerYAnchor, constant: offset.y)
         
-        ballXconstraint?.isActive = true
-        ballYconstraint?.isActive = true
+        pokeballX?.isActive = true
+        pokeballY?.isActive = true
     }
     
     @objc func dragBall(recognizer: UIPanGestureRecognizer) {
@@ -91,10 +90,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
                 
                 // Update X/Y contraints of the ball:
                 let offset = pointOnCircumference(theta)
-                if let ballXconstraint = ballXconstraint, let ballYconstraint = ballYconstraint {
-                    ballXconstraint.constant = offset.x
-                    ballYconstraint.constant = offset.y
-                }
+                updateBall(point: offset)
                 
             }
         }else{
@@ -116,10 +112,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
         
         let theta = convertToRads(deg: CGFloat(randDegree))
         let offset = pointOnCircumference(theta)
-        if let ballXconstraint = ballXconstraint, let ballYconstraint = ballYconstraint {
-            ballXconstraint.constant = offset.x
-            ballYconstraint.constant = offset.y
-        }
+        updateBall(point: offset)
        
         
         let animation = CAKeyframeAnimation(keyPath: #keyPath(CALayer.position))
@@ -127,7 +120,7 @@ class ViewController: UIViewController, CAAnimationDelegate {
         animation.repeatCount = 0
         animation.values = points
         animation.delegate = self
-        animation.calculationMode = CAAnimationCalculationMode.paced // This give the animation an even pace
+        animation.calculationMode = CAAnimationCalculationMode.paced 
         ball.layer.add(animation, forKey: "sample")
        
         
@@ -138,8 +131,14 @@ class ViewController: UIViewController, CAAnimationDelegate {
 
     }
     
-  
-   
+    
+    func updateBall(point:CGPoint){
+        if let ballXconstraint = pokeballX, let ballYconstraint = pokeballY {
+            ballXconstraint.constant = point.x
+            ballYconstraint.constant = point.y
+        }
+    }
+    
     
     func convertToDegress(rads:CGFloat){
         let conDeg = rads * 180/CGFloat.pi

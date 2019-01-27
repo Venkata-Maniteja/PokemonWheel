@@ -14,26 +14,9 @@ class WheelView: UIView  {
     
     var pointMapper  = [Int:CGPoint]()
     var path = UIBezierPath()
-     let trackOffset = 10.0
+    let trackOffset = 10.0
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
-    //override func initCod
-    
-    override func draw(_ rect: CGRect) {
-        //let's do some fancy drawing here
-        
-        
-        // x^2 + y^2 = r^2
-        
-        // cos(θ) = x / r  ==> x = r * cos(θ)
-        // sin(θ) = y / r  ==> y = r * sin(θ)
         
         let radius: Double = Double(rect.width) / 2 - trackOffset
         
@@ -50,7 +33,6 @@ class WheelView: UIView  {
             let y = Double(center.y) + radius * sin(radians)
             
             path.addLine(to: CGPoint(x: x, y: y))
-             print(i,x,y)
             pointMapper[Int(i)] = CGPoint(x: x, y: y)
         }
         
